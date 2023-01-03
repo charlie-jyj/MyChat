@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Dialogue: Codable {
+    var time: Int = 0
+    var text: String = ""
+    var author: String = ""
+    var color: String = ""
+}

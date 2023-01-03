@@ -15,29 +15,42 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    private enum Field: Int, CaseIterable {
+        case username
+    }
+    
+    @State var username: String = ""
+    @State var isChatBoardAppear: Bool = false
+    @FocusState private var focusedField: Field?
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+            VStack(alignment: .leading) {
+                Text("Hello, \(username)")
+                HStack {
+                    TextField("Username", text: $username)
+                        .focused($focusedField, equals: .username)
+                        .sheet(isPresented: $isChatBoardAppear) {
+                            ChatBoard(username: $username)
+                        }
+                    Button(action: { isChatBoardAppear = !isChatBoardAppear }) {
+                        Label("register", systemImage: "pencil")
                     }
                 }
-                .onDelete(perform: deleteItems)
             }
+            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
             .toolbar {
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                ToolbarItemGroup(placement: .keyboard) {
+                    Button("Done") {
+                        focusedField = nil
                     }
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 }
             }
-            Text("Select an item")
         }
-    }
+    }// end of body
+    
 
     private func addItem() {
         withAnimation {
@@ -80,6 +93,7 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -16,6 +16,14 @@
 		6A44D02329629BB60065364B /* MyChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A44D02229629BB60065364B /* MyChatTests.swift */; };
 		6A44D02D29629BB60065364B /* MyChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A44D02C29629BB60065364B /* MyChatUITests.swift */; };
 		6A44D02F29629BB60065364B /* MyChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A44D02E29629BB60065364B /* MyChatUITestsLaunchTests.swift */; };
+		6A44D03C2962A4740065364B /* ChatBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A44D03B2962A4740065364B /* ChatBoard.swift */; };
+		6A44D03E2962A90F0065364B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A44D03D2962A90F0065364B /* Extensions.swift */; };
+		6A44D0422963AFA80065364B /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 6A44D0412963AFA80065364B /* Starscream */; };
+		6A44D0442963B4340065364B /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A44D0432963B4340065364B /* WebSocketManager.swift */; };
+		6A44D0482963F1C40065364B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A44D0472963F1C40065364B /* User.swift */; };
+		6A44D04B296412290065364B /* Dialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A44D04A296412290065364B /* Dialogue.swift */; };
+		6A44D04D296412330065364B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A44D04C296412330065364B /* Message.swift */; };
+		6A44D04F296412410065364B /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A44D04E296412410065364B /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		6A44D02829629BB60065364B /* MyChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A44D02C29629BB60065364B /* MyChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatUITests.swift; sourceTree = "<group>"; };
 		6A44D02E29629BB60065364B /* MyChatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6A44D03B2962A4740065364B /* ChatBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBoard.swift; sourceTree = "<group>"; };
+		6A44D03D2962A90F0065364B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6A44D03F2962AE640065364B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6A44D0432963B4340065364B /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
+		6A44D0472963F1C40065364B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6A44D04A296412290065364B /* Dialogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialogue.swift; sourceTree = "<group>"; };
+		6A44D04C296412330065364B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		6A44D04E296412410065364B /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A44D0422963AFA80065364B /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,10 +116,15 @@
 		6A44D00A29629BB40065364B /* MyChat */ = {
 			isa = PBXGroup;
 			children = (
+				6A44D049296412060065364B /* Model */,
+				6A44D03F2962AE640065364B /* Info.plist */,
 				6A44D00B29629BB40065364B /* MyChatApp.swift */,
 				6A44D00D29629BB40065364B /* ContentView.swift */,
-				6A44D00F29629BB50065364B /* Assets.xcassets */,
+				6A44D03B2962A4740065364B /* ChatBoard.swift */,
+				6A44D03D2962A90F0065364B /* Extensions.swift */,
+				6A44D0432963B4340065364B /* WebSocketManager.swift */,
 				6A44D01429629BB50065364B /* Persistence.swift */,
+				6A44D00F29629BB50065364B /* Assets.xcassets */,
 				6A44D01929629BB50065364B /* MyChat.entitlements */,
 				6A44D01629629BB50065364B /* MyChat.xcdatamodeld */,
 				6A44D01129629BB50065364B /* Preview Content */,
@@ -135,6 +157,17 @@
 			path = MyChatUITests;
 			sourceTree = "<group>";
 		};
+		6A44D049296412060065364B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A44D0472963F1C40065364B /* User.swift */,
+				6A44D04A296412290065364B /* Dialogue.swift */,
+				6A44D04C296412330065364B /* Message.swift */,
+				6A44D04E296412410065364B /* History.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,6 +184,9 @@
 			dependencies = (
 			);
 			name = MyChat;
+			packageProductDependencies = (
+				6A44D0412963AFA80065364B /* Starscream */,
+			);
 			productName = MyChat;
 			productReference = 6A44D00829629BB40065364B /* MyChat.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +259,9 @@
 				Base,
 			);
 			mainGroup = 6A44CFFF29629BB40065364B;
+			packageReferences = (
+				6A44D0402963AFA80065364B /* XCRemoteSwiftPackageReference "Starscream" */,
+			);
 			productRefGroup = 6A44D00929629BB40065364B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,9 +305,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A44D01529629BB50065364B /* Persistence.swift in Sources */,
+				6A44D03E2962A90F0065364B /* Extensions.swift in Sources */,
 				6A44D01829629BB50065364B /* MyChat.xcdatamodeld in Sources */,
+				6A44D04F296412410065364B /* History.swift in Sources */,
+				6A44D04B296412290065364B /* Dialogue.swift in Sources */,
 				6A44D00E29629BB40065364B /* ContentView.swift in Sources */,
+				6A44D0482963F1C40065364B /* User.swift in Sources */,
+				6A44D03C2962A4740065364B /* ChatBoard.swift in Sources */,
+				6A44D04D296412330065364B /* Message.swift in Sources */,
 				6A44D00C29629BB40065364B /* MyChatApp.swift in Sources */,
+				6A44D0442963B4340065364B /* WebSocketManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +478,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyChat/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -440,8 +489,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yujin.MyChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -459,7 +512,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyChat/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -467,8 +523,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yujin.MyChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -584,6 +644,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6A44D0402963AFA80065364B /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6A44D0412963AFA80065364B /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6A44D0402963AFA80065364B /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6A44D01629629BB50065364B /* MyChat.xcdatamodeld */ = {

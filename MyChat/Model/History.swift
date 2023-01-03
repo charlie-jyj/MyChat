@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct History: Codable {
+    var type: String = ""
+    var data: [Dialogue] = []
+}

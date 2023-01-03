@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Message: Codable {
+    var type: String = ""
+    var data: Dialogue = Dialogue()
+}
